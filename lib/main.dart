@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 void main() => {
       runApp(MyApp(
-          items: new List<Widget>.generate(12, (i) {
-        return new Center(
+          items: new List<Widget>.generate(120, (i) {
+        return new Container(
           child: new Text(
-            '第${(i ~/ 3 + 1)}行\n第${i % 3 + 1}个元素',
-            style: TextStyle(fontSize: 20.0),
+            '第${(i ~/ 4 + 1)}行\n第${i % 4 + 1}个元素',
+            style: TextStyle(fontSize: 15.0),
           ),
+          color: Colors.red[200],
+          alignment: Alignment.center,
+          margin: const EdgeInsets.fromLTRB(0, 0, 0, 5.0),
         );
       })))
     };
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(title: new Text('GirdView')),
         body: GridView.count(
             padding: const EdgeInsets.all(20.0),
-            crossAxisCount: 3,
+            crossAxisCount: 4,
             crossAxisSpacing: 10.0,
             children: items),
       ),
